@@ -4,6 +4,7 @@ import unittest
 
 import hw3
 from data import CountyDemographics
+from build_data import get_data
 
 # These two values are defined to support testing below. The
 # data within these structures should not be modified. Doing
@@ -183,12 +184,23 @@ class TestCases(unittest.TestCase):
     # Part 1
     # test population_total
 
-    def test_population_total(self):
+    def test_population_total1(self):
         list = [CountyDemographics({}, {}, {}, {}, {}, {'2014 Population':2014}, {})]
         result = hw3.population_total(list)
         expected = 2014
         self.assertEqual(expected, result)
 
+    def test_population_total2(self):
+        list = build_data.get_data()
+        result = hw3.population_total(list)
+        expected = 318857056
+        self.assertEqual(expected, result)
+
+    def test_population_total3(self):
+        list = [CountyDemographics({}, {}, {}, {}, {}, {'2014 Population':2014}, {}),CountyDemographics({}, {}, {}, {}, {}, {'2014 Population':2014}, {}) ]
+        result = hw3.population_total(list)
+        expected = 4048
+        self.assertEqual(expected, result)
 
     # Part 2
     # test filter_by_state

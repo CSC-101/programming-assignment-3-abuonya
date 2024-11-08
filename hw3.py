@@ -3,7 +3,7 @@ from data import CountyDemographics
 import build_data
 
 
-get_data(CountyDemographics)
+
 # PART 1
 # DESIGN RECIPE
     # Purpose of Function: takes a list of county demographic objects and returns the total 2014 population from all the counties provided in the list.
