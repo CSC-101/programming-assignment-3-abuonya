@@ -184,7 +184,7 @@ class TestCases(unittest.TestCase):
     # test population_total
 
     def test_population_total(self):
-        list = CountyDemographics({}, {}, {}, {}, {}, {'2014 Population':2014}, {})
+        list = [CountyDemographics({}, {}, {}, {}, {}, {'2014 Population':2014}, {})]
         result = hw3.population_total(list)
         expected = 2014
         self.assertEqual(expected, result)
