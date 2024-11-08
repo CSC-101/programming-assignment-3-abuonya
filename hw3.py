@@ -1,13 +1,15 @@
+from build_data import get_data
 from data import CountyDemographics
+import build_data
 
 
+get_data(CountyDemographics)
 # PART 1
 # DESIGN RECIPE
     # Purpose of Function: takes a list of county demographic objects and returns the total 2014 population from all the counties provided in the list.
     # Input: list[CountyDemographics] **of type list  # Output Given Input: 318,857,056 **of type int
     # If I was Computer: take the county list, create a new variable set at 0, iterate through the list, accessing the index 'population', extracting its key-value pair at
     # '2014 Population', and adding its associated value to the new variable I set before. Lastly, return the total sum at the end of the loop.
-
 def population_total(list:list[CountyDemographics] ) -> int:
     sum_of_2014_population = 0   # create variable to store sum of '2014 Population' values as function iterates through the list.
 
@@ -25,7 +27,15 @@ def population_total(list:list[CountyDemographics] ) -> int:
     # If I was a Computer: take the county demographics list, iterate it given the specific that the index equals the state abbreviation. I'd store every itereated index into a new list,
     # and return that new list.
 
-def filter_by_state(list:list[CountyDemographics], str) -> list[CountyDemographics]:
+def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDemographics]:
+    county_demographics_given_state = []
+
+    for idx in list:
+        if idx.state == state:
+            county_demographics_given_state.append(idx)
+
+    print(county_demographics_given_state)
+    return (county_demographics_given_state)
 
 
 
