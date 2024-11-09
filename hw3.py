@@ -183,7 +183,7 @@ def education_greater_than(all_data:list[CountyDemographics], educational_level:
             county_education_percent = idx.education[educational_level]
 
             if county_education_percent > threshold:
-                above_education_threshold_list.append(idx.county)
+                above_education_threshold_list.append(idx)
 
     return above_education_threshold_list
 
@@ -195,7 +195,7 @@ def education_less_than(all_data:list[CountyDemographics], educational_level: st
             county_education_percent = idx.education[educational_level]
 
             if county_education_percent < threshold:
-                below_education_threshold_list.append(idx.county)
+                below_education_threshold_list.append(idx)
 
     return below_education_threshold_list
 
@@ -211,7 +211,7 @@ def ethnicity_greater_than(all_data:list[CountyDemographics], ethnicity: str, th
             county_ethnic_percent = idx.ethnicities[ethnicity]
 
             if county_ethnic_percent > threshold:
-                above_ethnic_threshold_list.append(idx.county)
+                above_ethnic_threshold_list.append(idx)
 
     return above_ethnic_threshold_list
 
@@ -223,7 +223,7 @@ def ethnicity_less_than(all_data:list[CountyDemographics], ethnicity: str, thres
             county_ethnic_percent = idx.ethnicities[ethnicity]
 
             if county_ethnic_percent < threshold:
-                below_ethnic_threshold_list.append(idx.county)
+                below_ethnic_threshold_list.append(idx)
 
     return below_ethnic_threshold_list
 
@@ -239,7 +239,7 @@ def below_poverty_level_less_than(all_data:list[CountyDemographics], threshold:i
             county_below_poverty_percent = idx.income['Persons Below Poverty Level']
 
             if county_below_poverty_percent < threshold:
-                below_poverty_level_threshold.append(idx.county)
+                below_poverty_level_threshold.append(idx)
 
     return below_poverty_level_threshold
 
@@ -251,6 +251,6 @@ def below_poverty_level_greater_than(all_data:list[CountyDemographics], threshol
             county_below_poverty_percent = idx.income['Persons Below Poverty Level']
 
             if county_below_poverty_percent > threshold:
-                above_poverty_level_threshold.append(idx.county)
+                above_poverty_level_threshold.append(idx)
 
     return above_poverty_level_threshold
