@@ -146,3 +146,28 @@ def percent_by_ethnicity(list: list[CountyDemographics], ethnicity:str) -> float
 
     return (ethnic_population / total_2014_population) * 100
 
+# DESIGN RECIPE
+    # Purpose of Function: takes a parameter (list of county demographics objects) returning the percentage of those below the poverty level across the 2014 population.
+    # Input: list[CountyDemographics]  # Output Given Input: float
+
+def percent_below_poverty_level(list:list[CountyDemographics]) -> float:
+    total_population_under_poverty = 0.0
+    total_2014_population = 0.0
+
+    for idx in list:
+        if 'Persons Below Poverty Level' in idx.income:
+            county_poverty_percentage = idx.income['Persons Below Poverty Level']
+
+        if '2014 Population' in idx.population:
+            temp = idx.population['2014 Population']
+
+            total_2014_population += temp
+            total_population_under_poverty += temp * (county_poverty_percentage / 100)
+
+    if total_2014_population == 0:
+        return 0
+
+    return (total_population_under_poverty / total_2014_population) * 100
+
+# PART 5
+# DESIGN RECIPE
