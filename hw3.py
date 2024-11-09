@@ -103,9 +103,20 @@ def population_below_poverty_level(list: list[CountyDemographics]) -> float:
     # 2014 population and finding the income percentages given the county, and then sum it all up (convert to percents by times 100).
 
 def percent_by_education(list: list[CountyDemographics], education_level: str) -> float:
+    education_population = 0.0
+    total_2014_population = 0
+what ami doing gjgkdgsjsadg
+    for idx in list:
+        if education_level in idx.education:
+            county_education_percentage = idx.education[education_level]
 
+            if '2014 Population' in idx.population:
+                temp = idx.population['2014 Population']
 
+                total_2014_population += temp
+                education_population += temp * (county_education_percentage / 100)
 
+    if total_2014_population == 0:
+        return 0
 
-
-
+    return  (education_population / total_2014_population) * 100
