@@ -42,7 +42,9 @@ def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDem
     # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified education level. I'd store every itereated value-key pair into a new list,
     # and return that new list.
 
-def population_by_education(list: list[CountyDemographics], educational_level: str) -> float:
+def
+
+
 
 
 

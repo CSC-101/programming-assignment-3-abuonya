@@ -212,6 +212,14 @@ class TestCases(unittest.TestCase):
         expected = []
         self.assertEqual(expected, result)
 
+    def test_filer_by_state2(self):
+        self.maxDiff = None
+        list = reduced_data
+        state = 'WY'
+        result = hw3.filter_by_state(list, state)
+        expected = []
+        self.assertEqual(expected, result)
+
 """"""
 
     # Part 3
