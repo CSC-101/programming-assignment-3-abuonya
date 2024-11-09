@@ -378,7 +378,7 @@ class TestCases(unittest.TestCase):
          'Population per Square Mile': 3.0},
         'WY')
         ]
-        education_level = 'Higher School or Higher'
+        education_level = 'Persons Below Poverty Level'
         result = hw3.percent_by_education(list, education_level)
         expected = 0
         self.assertEqual(expected, result)
