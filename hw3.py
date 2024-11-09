@@ -189,3 +189,30 @@ def education_greater_than(all_data:list[CountyDemographics], educational_level:
 
 def education_less_than(all_data:list[CountyDemographics], educational_level: str, threshold: int) -> list:
     below_education_threshold_list = []
+
+    for idx in all_data:
+        if educational_level in idx.education:
+            county_education_percent = idx.education[educational_level]
+
+            if county_education_percent < threshold:
+                below_education_threshold_list.append(idx.county)
+
+    return below_education_threshold_list
+
+# DESIGN RECIPE
+    # Purpose of Function: takes three parameters (list of objects, ethnicity as a key, and a numeric threshold value) and returns a list of all county demographic objects for that specific key and threshold value.
+    # Input: list[CountyDemographics], 'Hispanic or Latino' , 30  # Output Given Input: float
+
+def ethnicity_greater_than(all_data:list[CountyDemographics], ethnicity: str, threshold: int) -> list:
+    above_ethnic_threshold_list = []
+
+    for idx in all_data:
+        if ethnicity in idx.ethnicities:
+            county_ethnic_percent = idx.ethnicities[ethnicity]
+
+            if county_ethnic_percent > threshold:
+                above_ethnic_threshold_list.append(idx.county)
+
+    return above_ethnic_threshold_list
+
+def ethn
