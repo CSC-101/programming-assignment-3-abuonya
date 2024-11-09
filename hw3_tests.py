@@ -205,6 +205,15 @@ class TestCases(unittest.TestCase):
     # Part 2
     # test filter_by_state
 
+    def test_filer_by_state1(self):
+        list = build_data.get_data()
+        state = 'MEOW'
+        result = hw3.filter_by_state(list, state)
+        expected = []
+        self.assertEqual(expected, result)
+
+""""""
+
     # Part 3
     # test population_by_education
     # test population_by_ethnicity

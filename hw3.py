@@ -33,11 +33,14 @@ def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDem
     for idx in list:
         if idx.state == state:
             county_demographics_given_state.append(idx)
-
-    print(county_demographics_given_state)
     return (county_demographics_given_state)
 
-
+# PART 3
+# DESIGN RECIPE
+    # Purpose of Function: takes two parameters (list of county demographic objects and educationa as the key) and returns the total 2014 population across the set of counties in the provided list
+    # Input: list[CountyDemographics] , CA   # Output Given Input: a list of all 58 counties
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the index equals the state abbreviation. I'd store every itereated index into a new list,
+    # and return that new list.
 
 
 
