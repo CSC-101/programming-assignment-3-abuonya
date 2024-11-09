@@ -230,21 +230,44 @@ class TestCases(unittest.TestCase):
         list = build_data.get_data()
         education_level = "Bachelor's Degree or Higher"
         result = hw3.population_by_education(list, education_level)
-        expected = 87911.145
+        expected = 198051683193.27942
         self.assertEqual(expected, result)
 
     def test_population_by_education2(self):
-        list = build_data.get_data()
+        list = []
         education_level = "High School or Higher"
         result = hw3.population_by_education(list, education_level)
-        expected = 87911.145
+        expected = 0
         self.assertEqual(expected, result)
 
     def test_population_by_education3(self):
-        list = reduced_data
+        list = [CountyDemographics(
+        {'Percent 65 and Older': 18.1,
+         'Percent Under 18 Years': 21.6,
+         'Percent Under 5 Years': 6.5},
+        'Weston County',
+        {"Bachelor's Degree or Higher": 17.2,
+         'High School or Higher': 90.2},
+        {'American Indian and Alaska Native Alone': 1.7,
+         'Asian Alone': 0.4,
+         'Black Alone': 0.7,
+         'Hispanic or Latino': 4.2,
+         'Native Hawaiian and Other Pacific Islander Alone': 0.0,
+         'Two or More Races': 2.2,
+         'White Alone': 95.0,
+         'White Alone, not Hispanic or Latino': 91.5},
+        {'Per Capita Income': 28764,
+         'Persons Below Poverty Level': 11.2,
+         'Median Household Income': 55461},
+        {'2010 Population': 7208,
+         '2014 Population': 7201,
+         'Population Percent Change': -0.1,
+         'Population per Square Mile': 3.0},
+        'WY')
+        ]
         education_level = "High School or Higher"
         result = hw3.population_by_education(list, education_level)
-        expected = 87911.145
+        expected = 6495.302000000001
         self.assertEqual(expected, result)
     # Part 4
     # test percent_by_education

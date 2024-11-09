@@ -17,7 +17,6 @@ def population_total(list:list[CountyDemographics] ) -> int:
             temp = idx.population['2014 Population']
             sum_of_2014_population += temp
 
-    print (sum_of_2014_population)
     return sum_of_2014_population
 
 # PART 2
@@ -55,6 +54,11 @@ def population_by_education(list: list[CountyDemographics], education_level: str
 
     return population_by_education
 
+# DESIGN RECIPE
+    # Purpose of Function: takes two parameters (list of county demographic objects and ethnicity as the key) and returns the total 2014 population across the set of counties in the provided list
+    # Input: list[CountyDemographics] , "Black Alone"   # Output Given Input: float
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified ethnicity. I'd store every itereated value-key pair into a new list,
+    # and return that new list.
 
 
 
