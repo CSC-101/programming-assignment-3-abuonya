@@ -135,11 +135,11 @@ def percent_by_ethnicity(list: list[CountyDemographics], ethnicity:str) -> float
         if ethnicity in idx.ethnicities:
             county_ethnic_percentage = idx.ethnicities[ethnicity]
 
-        if '2014 Population' in idx.population:
-            temp = idx.population['2014 Population']
+            if '2014 Population' in idx.population:
+                temp = idx.population['2014 Population']
 
-            total_2014_population += temp
-            ethnic_population += temp * (county_ethnic_percentage / 100)
+                total_2014_population += temp
+                ethnic_population += temp * (county_ethnic_percentage / 100)
 
     if total_2014_population == 0:
         return 0
