@@ -38,8 +38,8 @@ def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDem
 # DESIGN RECIPE
     # Purpose of Function: takes two parameters (list of county demographic objects and education as the key) and returns the total 2014 population across the set of counties in the provided list
     # Input: list[CountyDemographics] , "Bachelor's Degree or Higher"   # Output Given Input: 87911.145 --> float
-    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified education level. I'd store every itereated value-key pair into a new list,
-    # and return that new list.
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified education level. I'd caluclate each population and percentage of education
+    # given the county and sum it all together.
 
 def population_by_education(list: list[CountyDemographics], education_level: str) -> float:
     population_by_education = 0.0
@@ -57,8 +57,12 @@ def population_by_education(list: list[CountyDemographics], education_level: str
 # DESIGN RECIPE
     # Purpose of Function: takes two parameters (list of county demographic objects and ethnicity as the key) and returns the total 2014 population across the set of counties in the provided list
     # Input: list[CountyDemographics] , "Black Alone"   # Output Given Input: float
-    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified ethnicity. I'd store every itereated value-key pair into a new list,
-    # and return that new list.
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified ethnicity. I'd caluclate each population and percentage of key ethnicity
+    # and given the county, sum it all together.
+
+
+def population_by_ethnicity(list:list[CountyDemographics], ethnicity: str) -> float:
+
 
 
 
