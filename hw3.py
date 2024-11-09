@@ -62,7 +62,28 @@ def population_by_education(list: list[CountyDemographics], education_level: str
 
 
 def population_by_ethnicity(list:list[CountyDemographics], ethnicity: str) -> float:
+    population_by_ethnicity = 0.0
+    total_2014_population = population_total(build_data.get_data())
 
+    for idx in list:
+        if ethnicity in idx.ethnicities:
+            total_ethnicity_percent = idx.ethnicities[ethnicity]
+
+        education_population = total_2014_population * (total_ethnicity_percent / 100)
+        population_by_ethnicity += education_population
+
+    return population_by_ethnicity
+
+# DESIGN RECIPE
+    # Purpose of Function: takes one parameter (list of county demographics objects) and returns the total 2014 population for those below the poverty level across all the counties provided in the list.
+    # Input: list[CountyDemographics]  # Output Given Input: float
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified income level. I'll calculate it by finding the
+    # 2014 population and finding the income percentages given the county, and then sum it all up.
+
+def population_below_poverty_level(list: list[CountyDemographics]) -> float:
+    total_population_under_poverty = 0.0
+
+    for idx in
 
 
 
