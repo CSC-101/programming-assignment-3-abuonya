@@ -116,13 +116,33 @@ def percent_by_education(list: list[CountyDemographics], education_level: str) -
             total_2014_population += temp
             education_population += temp * (county_education_percentage / 100)
 
-    if total_2014_population == 0:
+    if education_level not in idx.education:
         return 0
-    else:
-        return  (education_population / total_2014_population) * 100
+
+    return  (education_population / total_2014_population) * 100
 
 # DESIGN RECIPE
     # Purpose of Function: takes two parameters (list of county demographics objects and ethnicity as the key), returning the percentage of an ethnic group across the 2014 population.
     # Input: list[CountyDemographics], 'Black Alone'  # Output Given Input: float
     # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified ethnicity. I'll calculate it by finding the
     # 2014 population and finding the ethnic percentages given the county, and then sum it all up (convert to percents by times 100).
+
+def percent_by_ethnicity(list: list[CountyDemographics], ethnicity:str) -> float:
+    ethnic_population = 0.0
+    total_2014_population = 0.0
+
+    for idx in list:
+        if ethnicity in idx.ethnicities:
+            county_ethnic_percentage = idx.ethnicities[ethnicity]
+
+        if '2014 Population' in idx.population:
+            temp = idx.population['2014 Population']
+
+            total_2014_population += temp
+            ethnic_population += temp * (county_ethnic_percentage / 100)
+
+        if ethnicity not in idx.ethnicities:
+            return 0
+    else:
+        return (ethnic_population / total_2014_population) * 100
+
