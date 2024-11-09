@@ -226,3 +226,19 @@ def ethnicity_less_than(all_data:list[CountyDemographics], ethnicity: str, thres
                 below_ethnic_threshold_list.append(idx.county)
 
     return below_ethnic_threshold_list
+
+# DESIGN RECIPE
+    # Purpose of Function: takes two parameters (list of objects and a numeric threshold value) and returns a list of all county demographic objects for that specific key and threshold value.
+    # Input: list[CountyDemographics], 45  # Output Given Input: float
+
+def below_poverty_level_less_than(all_data:list[CountyDemographics], threshold:int) -> list:
+    below_poverty_level_threshold = []
+
+    for idx in all_data:
+        if 'Persons Below Poverty Level' in idx.income:
+            county_below_poverty_percent = idx.income['Persons Below Poverty Level']
+
+            if county_below_poverty_percent < threshold:
+                below_poverty_level_threshold.append(idx.county)
+
+    return below_poverty_level_threshold
