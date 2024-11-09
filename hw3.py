@@ -82,8 +82,16 @@ def population_by_ethnicity(list:list[CountyDemographics], ethnicity: str) -> fl
 
 def population_below_poverty_level(list: list[CountyDemographics]) -> float:
     total_population_under_poverty = 0.0
+    total_2014_population = population_total(build_data.get_data())
 
-    for idx in
+    for idx in list:
+        if 'Persons Below Poverty Level' in idx.income:
+            total_poverty_percentage = idx.income['Persons Below Poverty Level']
+
+        below_poverty_population = total_2014_population * (total_poverty_percentage / 100)
+        total_population_under_poverty += below_poverty_population
+
+    return total_population_under_poverty
 
 
 
