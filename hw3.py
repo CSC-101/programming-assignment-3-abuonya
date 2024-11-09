@@ -47,9 +47,10 @@ def population_by_education(list: list[CountyDemographics], education_level: str
 
     for idx in list:
         if education_level in list:
-            total_education_percent =
-            eductional_population =
+            total_education_percent = idx.education[education_level]
+            eduction_population = total_population * (total_education_percent / 100)
 
+total_population = population_total(build_data.get_data())
 
 
 
