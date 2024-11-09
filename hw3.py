@@ -215,4 +215,14 @@ def ethnicity_greater_than(all_data:list[CountyDemographics], ethnicity: str, th
 
     return above_ethnic_threshold_list
 
-def ethn
+def ethnicity_less_than(all_data:list[CountyDemographics], ethnicity: str, threshold: int) -> list:
+    below_ethnic_threshold_list = []
+
+    for idx in all_data:
+        if ethnicity in idx.ethnicities:
+            county_ethnic_percent = idx.ethnicities[ethnicity]
+
+            if county_ethnic_percent < threshold:
+                below_ethnic_threshold_list.append(idx.county)
+
+    return below_ethnic_threshold_list
