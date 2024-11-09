@@ -176,8 +176,15 @@ def percent_below_poverty_level(list:list[CountyDemographics]) -> float:
     # If I was a computer: loop through the list, find valid education key-pairs, compare if education percentage is greater or less than and add that to a list.
 
 def education_greater_than(all_data:list[CountyDemographics], educational_level: str, threshold: int) -> list:
+    above_education_threshold_list = []
 
     for idx in all_data:
         if educational_level in idx.education:
             county_education_percent = idx.education[educational_level]
-blosdfkljsjadfl;sdakl;fjsdakljfls;f safjosfmdsfmomgmgmgpoadslkjfgslda;jfpsdf
+
+            if county_education_percent > threshold:
+                above_threshold.append(idx.county)
+
+    return above_education_threshold_list
+
+def education_less_than(all_data:list[CountyDemographics], educational_level: str, threshold: int) -> list:
