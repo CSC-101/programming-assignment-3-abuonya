@@ -43,17 +43,7 @@ def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDem
     # and return that new list.
 
 def population_by_education(list: list[CountyDemographics], education_level: str) -> float:
-    population_given_education = 0
 
-    for idx in list:
-        if education_level in idx.education:
-            total_education_percent = idx.education[education_level]
-            eduction_population = idx.population['2014 Population'] * (total_education_percent / 100)
-            population_given_education += eduction_population
-
-    return population_given_education
-
-total_population = population_total(build_data.get_data())
 
 
 
