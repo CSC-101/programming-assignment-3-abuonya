@@ -242,3 +242,15 @@ def below_poverty_level_less_than(all_data:list[CountyDemographics], threshold:i
                 below_poverty_level_threshold.append(idx.county)
 
     return below_poverty_level_threshold
+
+def below_poverty_level_greater_than(all_data:list[CountyDemographics], threshold:int) -> list:
+    above_poverty_level_threshold = []
+
+    for idx in all_data:
+        if 'Persons Below Poverty Level' in idx.income:
+            county_below_poverty_percent = idx.income['Persons Below Poverty Level']
+
+            if county_below_poverty_percent > threshold:
+                above_poverty_level_threshold.append(idx.county)
+
+    return above_poverty_level_threshold

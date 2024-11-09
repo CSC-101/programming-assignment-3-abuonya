@@ -780,5 +780,132 @@ class TestCases(unittest.TestCase):
         expected = []
         self.assertEqual(expected, result)
 
+    def test_below_poverty_level_less_than(self):
+        list = []
+        threshold = 2
+        result = hw3.below_poverty_level_less_than(list, threshold)
+        expected = []
+        self.assertEqual(expected, result)
+
+    def test_below_poverty_level_less_than2(self):
+        list = [CountyDemographics(
+        {'Percent 65 and Older': 18.1,
+         'Percent Under 18 Years': 21.6,
+         'Percent Under 5 Years': 6.5},
+        'Weston County',
+        {"Bachelor's Degree or Higher": 17.2,
+         'High School or Higher': 90.2},
+        {'American Indian and Alaska Native Alone': 1.7,
+         'Asian Alone': 0.4,
+         'Black Alone': 0.7,
+         'Hispanic or Latino': 4.2,
+         'Native Hawaiian and Other Pacific Islander Alone': 0.0,
+         'Two or More Races': 2.2,
+         'White Alone': 95.0,
+         'White Alone, not Hispanic or Latino': 91.5},
+        {'Per Capita Income': 28764,
+         'Persons Below Poverty Level': 11.2,
+         'Median Household Income': 55461},
+        {'2010 Population': 7208,
+         '2014 Population': 7201,
+         'Population Percent Change': -0.1,
+         'Population per Square Mile': 3.0},
+        'WY'),
+        CountyDemographics(
+                {'Percent 65 and Older': 15.3,
+                 'Percent Under 18 Years': 25.1,
+                 'Percent Under 5 Years': 6.9},
+                'Pettis County',
+                {"Bachelor's Degree or Higher": 15.2,
+                 'High School or Higher': 81.8},
+                {'American Indian and Alaska Native Alone': 0.7,
+                 'Asian Alone': 0.7,
+                 'Black Alone': 3.4,
+                 'Hispanic or Latino': 8.3,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.3,
+                 'Two or More Races': 1.9,
+                 'White Alone': 92.9,
+                 'White Alone, not Hispanic or Latino': 85.5},
+                {'Per Capita Income': 19709,
+                 'Persons Below Poverty Level': 18.4,
+                 'Median Household Income': 38580},
+                {'2010 Population': 42201,
+                 '2014 Population': 42225,
+                 'Population Percent Change': 0.1,
+                 'Population per Square Mile': 61.9},
+                'MO')
+        ]
+        threshold = 70
+        result = hw3.below_poverty_level_less_than(list, threshold)
+        expected = ['Weston County', 'Pettis County']
+        self.assertEqual(expected, result)
+
+    def test_below_poverty_level_greater_than(self):
+        list = []
+        threshold = 2
+        result = hw3.below_poverty_level_greater_than(list, threshold)
+        expected = []
+        self.assertEqual(expected, result)
+
+    def test_below_poverty_level_greater_than2(self):
+        list = [CountyDemographics(
+        {'Percent 65 and Older': 18.1,
+         'Percent Under 18 Years': 21.6,
+         'Percent Under 5 Years': 6.5},
+        'Weston County',
+        {"Bachelor's Degree or Higher": 17.2,
+         'High School or Higher': 90.2},
+        {'American Indian and Alaska Native Alone': 1.7,
+         'Asian Alone': 0.4,
+         'Black Alone': 0.7,
+         'Hispanic or Latino': 4.2,
+         'Native Hawaiian and Other Pacific Islander Alone': 0.0,
+         'Two or More Races': 2.2,
+         'White Alone': 95.0,
+         'White Alone, not Hispanic or Latino': 91.5},
+        {'Per Capita Income': 28764,
+         'Persons Below Poverty Level': 11.2,
+         'Median Household Income': 55461},
+        {'2010 Population': 7208,
+         '2014 Population': 7201,
+         'Population Percent Change': -0.1,
+         'Population per Square Mile': 3.0},
+        'WY'),
+        CountyDemographics(
+                {'Percent 65 and Older': 15.3,
+                 'Percent Under 18 Years': 25.1,
+                 'Percent Under 5 Years': 6.9},
+                'Pettis County',
+                {"Bachelor's Degree or Higher": 15.2,
+                 'High School or Higher': 81.8},
+                {'American Indian and Alaska Native Alone': 0.7,
+                 'Asian Alone': 0.7,
+                 'Black Alone': 3.4,
+                 'Hispanic or Latino': 8.3,
+                 'Native Hawaiian and Other Pacific Islander Alone': 0.3,
+                 'Two or More Races': 1.9,
+                 'White Alone': 92.9,
+                 'White Alone, not Hispanic or Latino': 85.5},
+                {'Per Capita Income': 19709,
+                 'Persons Below Poverty Level': 18.4,
+                 'Median Household Income': 38580},
+                {'2010 Population': 42201,
+                 '2014 Population': 42225,
+                 'Population Percent Change': 0.1,
+                 'Population per Square Mile': 61.9},
+                'MO')
+        ]
+        threshold = 2
+        result = hw3.below_poverty_level_greater_than(list, threshold)
+        expected = ['Weston County', 'Pettis County']
+        self.assertEqual(expected, result)
+
+    def test_below_poverty_level_greater_than3(self):
+        list = build_data.get_data()
+        threshold = 75
+        result = hw3.below_poverty_level_greater_than(list, threshold)
+        expected = []
+        self.assertEqual(expected, result)
+
 if __name__ == '__main__':
     unittest.main()
