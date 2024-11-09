@@ -183,8 +183,9 @@ def education_greater_than(all_data:list[CountyDemographics], educational_level:
             county_education_percent = idx.education[educational_level]
 
             if county_education_percent > threshold:
-                above_threshold.append(idx.county)
+                above_education_threshold_list.append(idx.county)
 
     return above_education_threshold_list
 
 def education_less_than(all_data:list[CountyDemographics], educational_level: str, threshold: int) -> list:
+    below_education_threshold_list = []
