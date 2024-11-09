@@ -171,3 +171,7 @@ def percent_below_poverty_level(list:list[CountyDemographics]) -> float:
 
 # PART 5
 # DESIGN RECIPE
+    # Purpose of Function: takes three parameters (list of objects, education as a key, and a numeric threshold value) and returns a list of all county demographic objects for that specific key and threshold value.
+    # Input: list[CountyDemographics], 'Bachelor's Degree or Higher' , 30  # Output Given Input: float
+    # If I was a computer: loop through the list, find valid education key-pairs, compare if education percentage is greater or less than and add that to a list.
+
