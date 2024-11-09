@@ -93,6 +93,14 @@ def population_below_poverty_level(list: list[CountyDemographics]) -> float:
 
     return total_population_under_poverty
 
+#PART 4
+# DESIGN RECIPE
+    # Purpose of Function: takes two parameters (list of county demographics objects and education as the key), returning the percentage of an education group across the 2014 population.
+    # Input: list[CountyDemographics], 'Bachelor's Degree or Higher'  # Output Given Input: float
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified education level. I'll calculate it by finding the
+    # 2014 population and finding the income percentages given the county, and then sum it all up (convert to percents by times 100).
+
+def percent_by_education(list: list[CountyDemographics], education_level: str) -> float:
 
 
 

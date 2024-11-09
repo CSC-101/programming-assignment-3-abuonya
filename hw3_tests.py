@@ -342,7 +342,6 @@ class TestCases(unittest.TestCase):
         expected = 806.512
         self.assertEqual(expected, result)
 
-
     # Part 4
     # test percent_by_education
     # test percent_by_ethnicity
