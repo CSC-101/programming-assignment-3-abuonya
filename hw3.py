@@ -116,7 +116,7 @@ def percent_by_education(list: list[CountyDemographics], education_level: str) -
             total_2014_population += temp
             education_population += temp * (county_education_percentage / 100)
 
-    if education_level not in idx.education:
+    if total_2014_population == 0:
         return 0
 
     return  (education_population / total_2014_population) * 100
@@ -141,8 +141,8 @@ def percent_by_ethnicity(list: list[CountyDemographics], ethnicity:str) -> float
             total_2014_population += temp
             ethnic_population += temp * (county_ethnic_percentage / 100)
 
-        if ethnicity not in idx.ethnicities:
-            return 0
-    else:
-        return (ethnic_population / total_2014_population) * 100
+    if total_2014_population == 0:
+        return 0
+
+    return (ethnic_population / total_2014_population) * 100
 
