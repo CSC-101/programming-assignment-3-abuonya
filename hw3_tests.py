@@ -239,6 +239,13 @@ class TestCases(unittest.TestCase):
         result = hw3.population_by_education(list, education_level)
         expected = 87911.145
         self.assertEqual(expected, result)
+
+    def test_population_by_education3(self):
+        list = reduced_data
+        education_level = "High School or Higher"
+        result = hw3.population_by_education(list, education_level)
+        expected = 87911.145
+        self.assertEqual(expected, result)
     # Part 4
     # test percent_by_education
     # test percent_by_ethnicity
