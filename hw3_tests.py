@@ -220,13 +220,25 @@ class TestCases(unittest.TestCase):
         expected = []
         self.assertEqual(expected, result)
 
-""""""
 
     # Part 3
     # test population_by_education
     # test population_by_ethnicity
     # test population_below_poverty_level
 
+    def test_population_by_education1(self):
+        list = build_data.get_data()
+        education_level = "Bachelor's Degree or Higher"
+        result = hw3.population_by_education(list, education_level)
+        expected = 87911.145
+        self.assertEqual(expected, result)
+
+    def test_population_by_education2(self):
+        list = build_data.get_data()
+        education_level = "High School or Higher"
+        result = hw3.population_by_education(list, education_level)
+        expected = 87911.145
+        self.assertEqual(expected, result)
     # Part 4
     # test percent_by_education
     # test percent_by_ethnicity
