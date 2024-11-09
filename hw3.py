@@ -24,7 +24,7 @@ def population_total(list:list[CountyDemographics] ) -> int:
 # DESIGN RECIPE
     # Purpose of Function: takes two parameters (county demographics and state abbreivation) and returns a list of county demographics given the specified state.
     # Input: list[CountyDemographics] , CA   # Output Given Input: a list of all 58 counties
-    # If I was a Computer: take the county demographics list, iterate it given the specific that the index equals the state abbreviation. I'd store every itereated index into a new list,
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the state abbreviation. I'd store every itereated index into a new list,
     # and return that new list.
 
 def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDemographics]:
@@ -37,10 +37,12 @@ def filter_by_state(list:list[CountyDemographics], state: str) -> list[CountyDem
 
 # PART 3
 # DESIGN RECIPE
-    # Purpose of Function: takes two parameters (list of county demographic objects and educationa as the key) and returns the total 2014 population across the set of counties in the provided list
-    # Input: list[CountyDemographics] , CA   # Output Given Input: a list of all 58 counties
-    # If I was a Computer: take the county demographics list, iterate it given the specific that the index equals the state abbreviation. I'd store every itereated index into a new list,
+    # Purpose of Function: takes two parameters (list of county demographic objects and education as the key) and returns the total 2014 population across the set of counties in the provided list
+    # Input: list[CountyDemographics] , "Bachelor's Degree or Higher"   # Output Given Input: 87911.145 --> float
+    # If I was a Computer: take the county demographics list, iterate it given the specific that the key equals the specified education level. I'd store every itereated value-key pair into a new list,
     # and return that new list.
+
+def population_by_education(list: list[CountyDemographics], educational_level: str) -> float:
 
 
 
